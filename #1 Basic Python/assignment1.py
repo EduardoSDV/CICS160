@@ -55,22 +55,27 @@ def primes(int1):
 
 print('primes(20)',primes(12))
 
-def prime_decomposition(int1):
-    prime_list = primes(int1)
-    return prime_list
-print(prime_decomposition(10))
+def prime_decomposition(n):
+    primes_list = primes(n)
+    factors = []
 
+    for p in primes_list:
+        while n % p == 0:
+            factors.append(p)
+            n = n/p
 
+    return factors
 
+print('prime_decomposition(20)',prime_decomposition(105))
 
+'''
+Task 5
+Write a function called has_prime_decomposition_of_size_2_and_factors_are_different, that receives as input a positive integer, and returns true iff (that means if and only if)
+the decomposition of its input into prime numbers has a length of exactly 2. For example, has_prime_decomposition_of_size_2_and_factors_are_different(21)
+should return True, since 21 has 3 and 7 seven as its only prime factors. has_prime_decomposition_of_size_2_and_factors_are_different (9) should return False, since it decomposes
+into the same prime number twice (namely, 3). has_prime_decomposition_of_size_2_and_factors_are_different(45) should return False, since its prime number decomposition includes two
+unique prime numbers, but one of them (3) is included twice. has_prime_decomposition_of_size_2_and_factors_are_different(105) should return False, since, even though its prime factors
+only appear once, it has three of them. has_ prime_decomposition_of_size_2_and_factors_are_different must make use of function prime_decomposition.
 
-
-
-
-<<<<<<< HEAD
-def is_prime(p_int):
-    for i in range sqrt.(p_int)
-
-=======
->>>>>>> 232ed018a53ca1b17d4601f41f9852ed51240f6a
-    
+(20 points)
+'''
