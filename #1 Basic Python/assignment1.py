@@ -79,3 +79,13 @@ only appear once, it has three of them. has_ prime_decomposition_of_size_2_and_f
 
 (20 points)
 '''
+
+def has_prime_decomposition_of_size_2_and_factors_are_different(n):
+    factors = prime_decomposition(n)
+    set_factors = set(factors)
+    if len(factors) == 2 and len(set_factors) != 0:
+        return True
+    else:
+        return False
+
+print('has_prime_decomposition_of_size_2_and_factors_are_different',has_prime_decomposition_of_size_2_and_factors_are_different(21))
