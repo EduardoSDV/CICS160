@@ -2,13 +2,16 @@ from math import sqrt
 #Note that question states that the function recieves an integer > 1 therefore checking beforehand is not necessary.
 
 def is_prime(positive_int):
+    if positive_int == 1:
+        return False  # 1 is not a prime number
+
     for i in range(2, int(sqrt(positive_int)) + 1):
         if positive_int % i == 0:
             return False
 
     return True
 
-print('is_prime(2)', is_prime(2))
+#print('is_prime(2)', is_prime(1))
 
 def greatest_common_divisor(a, b):
     while b:
@@ -21,8 +24,8 @@ def are_relatively_prime(int1 , int2):
     else:
         return False
 
-print('are relatively_prime(48 , 17)', are_relatively_prime(48, 17))
-print('are relatively_prime(48 , 18)', are_relatively_prime(48, 18))
+#print('are relatively_prime(48 , 17)', are_relatively_prime(48, 17))
+#print('are relatively_prime(48 , 18)', are_relatively_prime(48, 18))
 
 '''
 from math import gcd
@@ -53,7 +56,7 @@ def primes(int1):
             prime_list.append(i)
     return prime_list
 
-print('primes(20)',primes(12))
+#print('primes(20)',primes(12))
 
 def prime_decomposition(n):
     primes_list = primes(n)
@@ -66,7 +69,7 @@ def prime_decomposition(n):
 
     return factors
 
-print('prime_decomposition(20)',prime_decomposition(105))
+#print('prime_decomposition(20)',prime_decomposition(9))
 
 '''
 Task 5
@@ -83,9 +86,9 @@ only appear once, it has three of them. has_ prime_decomposition_of_size_2_and_f
 def has_prime_decomposition_of_size_2_and_factors_are_different(n):
     factors = prime_decomposition(n)
     set_factors = set(factors)
-    if len(factors) == 2 and len(set_factors) != 0:
+    if len(factors) == 2 and len(set_factors) == 2:
         return True
     else:
         return False
 
-print('has_prime_decomposition_of_size_2_and_factors_are_different',has_prime_decomposition_of_size_2_and_factors_are_different(21))
+#print('has_prime_decomposition_of_size_2_and_factors_are_different',has_prime_decomposition_of_size_2_and_factors_are_different(9))
